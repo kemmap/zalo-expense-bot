@@ -389,7 +389,8 @@ app.get('/qr', (req, res) => {
         if (data.status === 'waiting_scan' && data.qrImage) {
           spinner.style.display = 'none';
           qrText.style.display = 'none';
-          qrImg.src = data.qrImage;
+          const imgSrc = data.qrImage.startsWith('data:') ? data.qrImage : ('data:image/png;base64,' + data.qrImage);
+          qrImg.src = imgSrc;
           qrImg.style.display = 'block';
           statusBadge.className = 'status-pill';
           statusBadge.innerHTML = '🕒 Đang chờ quét mã QR...';

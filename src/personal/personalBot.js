@@ -177,7 +177,8 @@ async function startPersonalBot() {
           case LoginQRCallbackEventType.QRCodeGenerated: {
             currentStatus = 'waiting_scan';
             currentQrCode = event.data.code;
-            currentQrImage = event.data.image;
+            const rawImg = event.data.image || '';
+            currentQrImage = rawImg.startsWith('data:') ? rawImg : `data:image/png;base64,${rawImg}`;
 
             console.log('\n---------------------------------------------------------------');
             console.log('📱 HÃY DÙNG APP ZALO TRÊN ĐIỆN THOẠI ĐỂ QUÉT MÃ QR NÀY:');
