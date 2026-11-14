@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: zalo-expense-bot
+    env: node
+    plan: free
+    region: singapore
+    buildCommand: npm install
+    startCommand: node src/server.js
+    envVars:
+      - key: PORT
+        value: 3000
+      - key: ZALO_APP_ID
+        sync: false
+      - key: ZALO_APP_SECRET
+        sync: false
+      - key: ZALO_OA_ID
+        sync: false
+      - key: ZALO_ACCESS_TOKEN
+        sync: false
+      - key: ZALO_REFRESH_TOKEN
+        sync: false

@@ -1,0 +1,28 @@
+{
+  "name": "zalo-expense-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "personal": "node src/personal/personalBot.js",
+    "test": "node src/tests/integration_test.js",
+    "dev": "node --watch src/server.js",
+    "tunnel": "npx localtunnel --port 3000",
+    "check-token": "node src/zalo/check_credentials.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "axios": "^1.21.1",
+    "better-sqlite3": "^13.1.1",
+    "dayjs": "^1.11.23",
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0",
+    "qrcode": "^1.5.4",
+    "qrcode-terminal": "^0.12.0",
+    "zca-js": "^2.2.0"
+  }
+}
