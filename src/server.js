@@ -48,6 +48,13 @@ async function processUserMessage(senderId, text) {
 }
 
 // ==========================================
+// 0. Root Redirect -> /qr
+// ==========================================
+app.get('/', (req, res) => {
+  return res.redirect('/qr');
+});
+
+// ==========================================
 // 1. Health Check Endpoint
 // ==========================================
 app.get('/health', (req, res) => {
